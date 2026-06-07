@@ -6,11 +6,11 @@ export interface SkillGroup {
 export const skills: SkillGroup[] = [
   {
     label: "Languages",
-    items: ["JavaScript (ES6+)", "TypeScript", "Python", "Java", "SQL", "HTML", "CSS"],
+    items: ["JavaScript (ES6+)", "TypeScript", "Python", "Java", "SQL", "Bash", "HTML", "CSS"],
   },
   {
     label: "Frameworks",
-    items: ["React", "Next.js", "Node.js", "Express", "Redux", "Angular", "Bootstrap"],
+    items: ["React", "Next.js", "Node.js", "Express", "Redux", "Angular", "Bootstrap", "Webpack", "Vite"],
   },
   {
     label: "Databases",
@@ -18,7 +18,7 @@ export const skills: SkillGroup[] = [
   },
   {
     label: "DevOps & Cloud",
-    items: ["AWS (Lambda, S3, CloudFront, Route53)", "Docker", "Git", "CI/CD", "Jenkins", "Webpack", "Vite"],
+    items: ["AWS (Lambda, S3, CloudFront, Route53)", "Docker", "Git", "CI/CD", "Jenkins"],
   },
   {
     label: "Testing",

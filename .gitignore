@@ -31,5 +31,10 @@ next-env.d.ts
 # os
 .DS_Store
 
-# resume pdf (generated artifact — compile from resume/resume.tex)
-/public/resume.pdf
+# resume build artifacts (source: resume/resume.tex, output: public/resume.pdf)
+resume/resume.pdf
+resume/resume.aux
+resume/resume.log
+resume/resume.out
+resume/resume.fls
+resume/resume.fdb_latexmk
