@@ -1,0 +1,217 @@
+%-------------------------
+% Resume in Latex
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Mitchell Sam} \\ \vspace{1pt}
+    99 John Street, Apt. \#321, New York, NY 10038 \\ \vspace{1pt}
+    \small \raisebox{-0.1\height}\faPhone\ 908-902-3068 ~ \href{mailto:msam478@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{msam478@gmail.com}} ~
+    \href{https://linkedin.com/in/mitchell-sam/}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/mitchell-sam}}  ~
+    \href{https://github.com/MitchellSam}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/MitchellSam}}
+    \vspace{-8pt}
+\end{center}
+
+%-----------SUMMARY-----------
+\section*{Summary}
+Full Stack Software Engineer with experience building scalable applications and modernizing complex legacy systems in fast-paced, Agile environments. Currently serving as the primary engineer on a multimedia integration application at JPMorgan Chase, leading systematic codebase modernization and collaborating on a full platform rewrite. Proficient in React, TypeScript, Node.js, SQL, and cloud infrastructure, with hands-on experience applying AI-assisted development workflows --- including GitHub Copilot and Claude Code --- and spec-driven development practices. Former business analyst and IT support technician with a strong ability to bridge technical and non-technical stakeholders. Currently preparing for the AWS Developer Associate certification.
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: JavaScript (ES6+), TypeScript, SQL, HTML, CSS, Python, Java} \\
+     \textbf{Frameworks \& Libraries}{: React, Node.js, Express, Next.js, Bootstrap, Redux, Angular} \\
+     \textbf{Databases}{: MySQL, PostgreSQL, MS SQL Server, MongoDB, Redis} \\
+     \textbf{DevOps \& Tools}{: Git, GitHub, NPM, Docker, Vite, Webpack, Jenkins, Maven, Liquibase, AWS (Lambda, S3, CloudFront, Route53)} \\
+     \textbf{Testing}{: Mocha, Chai, Jasmine, Jest, Playwright, Postman} \\
+     \textbf{AI Tools}{: GitHub Copilot, Claude Code} \\
+     \textbf{Other}{: REST APIs, Agile/Scrum, Jira, CI/CD Pipelines, SDLC, Spec-Driven Development, BDD, TDD, UNIX, Bash Scripting, Data Analysis} \\
+    }}
+ \end{itemize}
+ \vspace{-16pt}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {A.V. Services Inc.}{Dec 2025 -- Present}
+      {Fullstack Software Engineer II (Contracted to JPMorgan Chase)}{Jersey City, NJ}
+
+      Primary engineer on a multimedia integration application at JPMorgan Chase, focused on codebase modernization and platform stability.
+      \resumeItemListStart
+        \resumeItem{Codebase Modernization: Leading a systematic refactoring initiative across the full stack, improving code quality, maintainability, and long-term extensibility of a complex internal platform.}
+        \resumeItem{AI-Assisted Development: Leveraging GitHub Copilot and Claude Code to accelerate large-scale refactoring efforts, significantly increasing throughput and code quality across the codebase.}
+        \resumeItem{Spec-Driven Development: Championing the adoption of spec-driven development practices with the broader engineering team, establishing a disciplined approach to defining behavior before implementation.}
+        \resumeItem{Full Rewrite Initiative: Collaborating with the team to architect a full rewrite of the platform, applying spec-driven development methodologies to modernize the application's architecture and improve scalability.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Consultant}{Jun 2023 -- Dec 2025}
+      {Software Developer}{New York, NY}
+
+      Offered consulting services focused on infrastructure, legacy system upgrades, and intelligent data ingestion pipelines.
+      \resumeItemListStart
+        \resumeItem{Windows on the Lake: Refactored and enhanced a legacy email parsing system that routes client inquiries to a CRM. Enhancements include using the GLiNER Named Entity Recognition model for natural language processing for intelligent tagging and categorization of data.}
+        \resumeItem{HEVO: Conducted a post-migration technical audit of AWS infrastructure, legacy Java codebases, and CI/CD pipelines to help restore platform functionality and re-establish internal development workflows after transitioning from a third-party contractor.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {CircleBlack Inc.}{Mar 2020 -- Jun 2023}
+      {Software Engineer}{Jersey City, NJ}
+
+      Agile FinTech company that offers an all-in-one wealth management platform that assists relationship-focused advisors with portfolio management, performance reporting, and rebalancing.
+      \resumeItemListStart
+        \resumeItem{Front-End Modernization: Made significant contributions to the migration of multiple Angular front ends to React, preserving 100\% functionality, reducing loading times by 50\%, and creating a smoother user experience.}
+        \resumeItem{Automated Testing: Developed and implemented comprehensive automated tests using Mocha, Chai, and Jasmine, achieving 100\% code coverage, and improving deployment confidence.}
+        \resumeItem{Queueing System: Built a Redis-based queuing system to handle high-volume financial report processing, reducing backend processing time by 50\% and improving system reliability.}
+        \resumeItem{Third-Party Integrations: Successfully integrated third-party systems using RESTful APIs enabling seamless data exchange, and expanding the platform's functionality and product offerings by 50\%.}
+        \resumeItem{Onboarding \& Documentation: Played a pivotal role in onboarding new hires by setting up their technical environment and authoring detailed documentation, reducing ramp-up time by 25\%.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Windows on the Lake}{Mar 2019 -- Feb 2020}
+      {Junior Developer}{New York, NY}
+
+      Worked for a Premiere Waterfront Wedding Venue, Catering Hall, and Events Facility to improve business operations and customer engagements.
+      \resumeItemListStart
+        \resumeItem{Email Parser Enhancement: Enhanced the automated email parser for the client, improving data extraction accuracy by 33\% and streamlining communication processes.}
+        \resumeItem{CRM Optimization: Optimized the client's CRM data flow, increasing data integrity and organization of the company's event management software, resulting in a 20\% increase in customer conversions.}
+        \resumeItem{Backend Development: Developed new features for backend APIs using Node.js and Express, supporting business operations and expanding functionality by 25\%.}
+        \resumeItem{Container Deployments: Managed container deployments with Docker, ensuring reliable and scalable application delivery, achieving 99.9\% uptime and improving scalability for client applications.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {FDM Group}{May 2016 -- Jan 2018}
+      {Business Analyst Consultant at Fannie Mae}{Washington, DC}
+
+      Fannie Mae is a government-sponsored enterprise that issues mortgage-backed securities to expand the secondary mortgage market and create opportunities to rent, buy, and refinance homes.
+      \resumeItemListStart
+        \resumeItem{Data Analytics \& Visualization: Produced, analyzed, and visualized data for over 100 usage and performance metrics, providing valuable insights that informed stakeholder decisions.}
+        \resumeItem{Testing: Supported internal tools used by risk and compliance teams. Wrote Python scripts, UNIX bash scripts, and SQL queries for data analysis and QA validation, performing hundreds of tests for research and data quality, reducing manual testing time by 50\% and ensuring accurate and timely releases.}
+        \resumeItem{Automation: Automated production-related tasks, saving the company approximately 100 man-hours per month and improving operational efficiency.}
+        \resumeItem{Loan Performance Improvements: Delivered enhancements to the Loan Performance application, improving data quality and reducing report generation time by 50\% while adding new features to improve user experience.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Amelotte International Corporation}{Nov 2014 -- Jul 2015}
+      {IT Support}{New York, NY}
+
+      Textiles and clothing manufacturing group with factories in Asia and regional offices in the United States.
+      \resumeItemListStart
+        \resumeItem{Database Development: Developed and implemented a database solution for tracking financial data, reducing invoice processing time by 25\% and minimizing errors.}
+        \resumeItem{Mentorship: Led training sessions on database schema design and data best practices, improving the technical proficiency of the management team and coworkers.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Ascend Leadership}{Jun 2013 -- Apr 2014}
+      {IT Support}{New York, NY}
+
+      Non-profit offering career lifecycle and cross-industry networking and mentorship opportunities, development, and leadership programs for Pan-Asian professionals.
+      \resumeItemListStart
+        \resumeItem{Website \& Membership Database Management: Managed and updated the organization's website and membership database, contributing to a 50\% increase in event registrations through improved visibility.}
+        \resumeItem{Data Analysis: Analyzed metrics for over 50 volunteer branches and over 5,000 registered members, providing insights that drove marketing decisions and strategic initiatives.}
+        \resumeItem{Acquisition Project: Played a key role during the acquisition of another organization by successfully implementing a website redesign and merging the distribution lists of over 60,000 contacts, ensuring data integrity and a smooth transition.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+\vspace{-16pt}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Fullstack Academy of Code}{Oct 2018 -- Feb 2019}
+      {Full-Time Immersive Software Engineering Program}{New York, NY}
+
+    \resumeSubheading
+      {Binghamton University}{Sep 2008 -- Mar 2013}
+      {Bachelor of Science in Bioengineering}{New York, NY}
+  \resumeSubHeadingListEnd
+
+%-----------LICENSES & CERTIFICATIONS-----------
+\section{Licenses \& Certifications}
+  \resumeSubHeadingListStart
+    \resumeItemListStart
+      \resumeItem{Foundation Certificate in Business Analysis (2015)}
+      \resumeItem{ITIL Foundation Certificate in IT Service Management}
+      \resumeItem{AWS Certified Developer - Associate (Currently studying for exam)}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+\end{document}

@@ -111,23 +111,30 @@ into `src/content/projects.ts`. No layout changes required.
 - **Location**: New York, NY
 
 ### Summary (source material — rewrite for web)
-Detail-oriented Full Stack Software Engineer with experience building scalable web
-applications in fast-paced Agile environments. Strong background in React, Node.js,
-SQL, and AWS. Former business analyst and IT support technician — bridges technical
-and non-technical teams. Currently preparing for AWS Developer Associate certification.
+Full Stack Software Engineer with experience building scalable applications and
+modernizing complex legacy systems in fast-paced Agile environments. Currently serving
+as the dedicated engineer for a mission-critical internal application at JPMorgan Chase,
+leading systematic tech debt remediation and architecting a full system rewrite.
+Proficient in React, TypeScript, Node.js, SQL, and cloud infrastructure, with hands-on
+experience applying AI-assisted development workflows — including GitHub Copilot and
+Claude Code — and spec-driven development practices. Former business analyst and IT
+support technician with a strong ability to bridge technical and non-technical
+stakeholders. Currently preparing for the AWS Developer Associate certification.
 
 ### Experience
 
 **Fullstack Software Engineer II** · A.V. Services Inc. (contracted to JPMC) · Dec 2025 – Present · Jersey City, NJ  
-*Dedicated engineer on MIT (Multimedia Integration Tool) — a business-critical internal application at JPMorgan Chase's Newport office*
-- Inherited a severely neglected codebase (single prior maintainer, years of quick-fix
-  accumulation); leading systematic tech debt remediation across the full stack.
-- Driving large-scale refactoring effort — eliminating spaghetti code, addressing code
-  smell, and replacing temporary implementations with production-quality solutions.
-- Leveraging GitHub Copilot and Claude Code to accelerate refactoring throughput and
-  establish spec-driven development practices with the broader team.
-- Currently architecting a full rewrite of MIT in collaboration with the team,
-  applying spec-driven development to define behavior before implementation.
+*Primary engineer on a multimedia integration application at JPMorgan Chase, focused on codebase modernization and platform stability.*
+- Leading a systematic refactoring initiative across the full stack, improving code
+  quality, maintainability, and long-term extensibility of a complex internal platform.
+- Leveraging GitHub Copilot and Claude Code to accelerate large-scale refactoring
+  efforts, significantly increasing throughput and code quality across the codebase.
+- Championing the adoption of spec-driven development practices with the broader
+  engineering team, establishing a disciplined approach to defining behavior before
+  implementation.
+- Collaborating with the team to architect a full rewrite of the platform, applying
+  spec-driven development to modernize the application's architecture and improve
+  scalability.
 - Stack: JavaScript, TypeScript, React, Python, MS SQL Server
 
 **Consultant Software Developer** · Independent · Jun 2023 – Dec 2025 · New York, NY
@@ -193,10 +200,11 @@ and non-technical teams. Currently preparing for AWS Developer Associate certifi
 |---|---|
 | Languages | JavaScript (ES6+), TypeScript, SQL, HTML, CSS, Python, Java |
 | Frameworks & Libraries | React, Node.js, Express, Next.js, Bootstrap, Redux, Angular |
-| Databases | MySQL, PostgreSQL, MongoDB, Redis |
+| Databases | MySQL, PostgreSQL, MS SQL Server, MongoDB, Redis |
 | DevOps & Tools | Git, Docker, Vite, Webpack, Jenkins, Maven, Liquibase, AWS (Lambda, S3, CloudFront, Route53) |
 | Testing | Jest, Mocha, Chai, Jasmine, Playwright, Postman |
-| Other | REST APIs, Agile/Scrum, CI/CD, BDD/TDD, UNIX, Bash, Data Analysis |
+| AI Tools | GitHub Copilot, Claude Code |
+| Other | REST APIs, Agile/Scrum, CI/CD, BDD/TDD, Spec-Driven Development, UNIX, Bash, Data Analysis |
 
 ---
 
@@ -220,7 +228,13 @@ and non-technical teams. Currently preparing for AWS Developer Associate certifi
 - [ ] Skills grid (from `src/content/skills.ts`)
 - [ ] Certifications section
 - [ ] Contact / Footer with PDF resume download link
-- [ ] Place `resume.pdf` in `public/`
+- [ ] Set up resume build tooling:
+  - Install BasicTeX: `brew install --cask basictex`
+  - Install required packages: `sudo tlmgr update --self && sudo tlmgr install latexmk titlesec enumitem fontawesome5 fancyhdr babel-english`
+  - Save `resume.tex` to `resume/resume.tex` in the project
+  - Add `resume/build.sh` to compile and copy output to `public/resume.pdf`
+  - Add `"resume:build": "cd resume && bash build.sh"` to `package.json`
+- [ ] Run `npm run resume:build` to generate `public/resume.pdf`
 
 ### Phase 3 — Case study pages
 
