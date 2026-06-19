@@ -8,14 +8,30 @@ interface Props {
 export default function SectionHeader({ num, title }: Props) {
   return (
     <RevealOnScroll className="flex items-baseline gap-4 mb-16">
-      <span className="font-mono text-[13px] text-accent font-medium">{num}</span>
+      <span style={{
+        fontFamily:    "var(--font-numeric)",
+        fontSize:      "var(--fs-label)",
+        fontWeight:    "var(--w-thin)",
+        color:         "var(--accent-text)",
+        letterSpacing: "var(--track-label)",
+      }}>
+        {num}
+      </span>
       <h2
-        className="font-semibold tracking-[-0.03em] text-text"
-        style={{ fontSize: "clamp(28px, 4vw, 40px)" }}
+        style={{
+          fontFamily:    "var(--font-display)",
+          fontWeight:    "var(--w-bold)",
+          fontSize:      "clamp(22px, 3vw, 32px)",
+          letterSpacing: "var(--track-wide)",
+          textTransform: "uppercase",
+          color:         "var(--text-primary)",
+          margin:        0,
+          lineHeight:    "var(--lh-snug)",
+        }}
       >
         {title}
       </h2>
-      <span className="flex-1 h-px bg-border self-center ml-2" />
+      <span className="flex-1 self-center ml-2" style={{ height: 1, background: "var(--border-hairline)" }} />
     </RevealOnScroll>
   );
 }

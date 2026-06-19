@@ -1,7 +1,18 @@
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
+import { Archivo, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  variable: "--archivo",
+  display: "swap",
+});
+
+const hanken = Hanken_Grotesk({
+  subsets: ["latin"],
+  variable: "--hanken",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Mitchell Sam — Fullstack Software Engineer",
@@ -32,7 +43,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      className={`${archivo.variable} ${hanken.variable}`}
     >
       <body>{children}</body>
     </html>

@@ -27,34 +27,41 @@ fullstack depth immediately.
 
 ## Visual Design System
 
-**Aesthetic**: linear.app × raycast.com — dark, minimal, typographic.
+**Aesthetic**: dark, angular, cinematic. Cool blue-slate substrate, warm gold accent, 0px-radius shapes, thin hairline borders.
 
-### Color palette
-
-```
-Background:     #0a0a0a
-Surface:        #111111  (cards, panels)
-Border:         #1f1f1f
-Text primary:   #f0f0f0
-Text muted:     #6b6b6b
-Accent:         #6ee7b7  (emerald-300)
-Accent glow:    rgba(110, 231, 183, 0.15)
-```
-
-### Typography
+### Color palette (DS core tokens)
 
 ```
-Display / hero: Geist (variable, sans-serif) — weight 600–800
-Body:           Geist — weight 400–500
-Mono:           Geist Mono — tech badges, labels
+Background:     #0a0e15  (--slate-900 / --bg-base)
+Surface card:   #1a212d  (--slate-700 / --surface-card)
+Border:         #3b4654  (--slate-500 / --border-hairline)
+Text primary:   #e8ecf1  (--slate-100 / --text-primary)
+Text muted:     #8b95a3  (--slate-300 / --text-muted)
+Accent:         #c9a23a  (--gold)
+Accent bright:  #f0c850  (--gold-bright)
+Selection/focus:#5fd0e6  (--cyan-bright)
 ```
+
+### Typography (DS tokens)
+
+```
+Display / hero: Archivo (variable) — uppercase, tracked, weight 600–800  (--font-display)
+Body:           Hanken Grotesk — weight 400–500                           (--font-text)
+Numerals:       Archivo thin — zero-padded readouts, weight 200–300      (--font-numeric)
+```
+
+### Shape language
+
+- **0px border radius everywhere** (`--radius-0`) — hard angular corners, no rounding
+- `--radius-pill` reserved for progress capsules and round button glyphs only
+- L-corner bracket frames via `CornerFrame` — the DS density dial (full HUD ↔ minimal hairline)
 
 ### Motion principles
 
-- Entrance: `fadeInUp` stagger on scroll — subtle, not theatrical
-- Hover: border glow + slight translate-y lift on cards
-- Hero: ambient animated gradient mesh (CSS only — no canvas)
-- No infinite loops or attention-fighting animations
+- Transitions: 120–200ms (`--dur-fast` / `--dur-base`), `ease-sharp` — snappy mechanical feel
+- Hover: brightened fill + faint cyan edge on interactive surfaces
+- Press: quick darken + `scale(0.98)` on buttons
+- No bounce springs, no infinite loops
 
 ---
 
@@ -210,36 +217,32 @@ stakeholders. Currently preparing for the AWS Developer Associate certification.
 
 ## Implementation Plan
 
-### Phase 1 — Scaffold & design foundation
+> **Current state (as of June 2026):** Phases 1 & 2 are complete. The site is scaffolded and
+> all content sections are implemented. Phase 5 (design system migration) is also complete.
 
-- [ ] `npm create next-app@latest . --typescript --tailwind --app --src-dir`
-- [ ] Install: `framer-motion`, `geist`, `@cloudflare/next-on-pages`, `wrangler`
-- [ ] Implement design tokens in `tailwind.config.ts`
-- [ ] Create layout shell: fixed nav, scroll container, footer
-- [ ] Connect to GitHub repo + set up Cloudflare Pages project
-- [ ] `wrangler.toml` config; verify `wrangler pages dev` runs locally
+### Phase 1 — Scaffold & design foundation ✅
+
+- [x] `npm create next-app@latest . --typescript --tailwind --app --src-dir`
+- [x] Install: `framer-motion`, `geist`, `@cloudflare/next-on-pages`, `wrangler`
+- [x] Implement design tokens in `tailwind.config.ts`
+- [x] Create layout shell: fixed nav, scroll container, footer
+- [x] Connect to GitHub repo + set up Cloudflare Pages project
+- [x] `wrangler.toml` config; verify `wrangler pages dev` runs locally
 - [ ] Wire `mitchellsam.com` custom domain in Cloudflare Pages dashboard
 
-### Phase 2 — Content sections
+### Phase 2 — Content sections ✅
 
-- [ ] Hero section with animated tagline word swap
-- [ ] Work Experience timeline (from `src/content/experience.ts`)
-- [ ] Projects card grid (from `src/content/projects.ts`) — 2–3 initial cards + placeholder
-- [ ] Skills grid (from `src/content/skills.ts`)
-- [ ] Certifications section
-- [ ] Contact / Footer with PDF resume download link
-- [ ] Set up resume build tooling:
-  - Install BasicTeX: `brew install --cask basictex`
-  - Install required packages: `sudo tlmgr update --self && sudo tlmgr install latexmk titlesec enumitem fontawesome5 fancyhdr babel-english`
-  - Save `resume.tex` to `resume/resume.tex` in the project
-  - Add `resume/build.sh` to compile and copy output to `public/resume.pdf`
-  - Add `"resume:build": "cd resume && bash build.sh"` to `package.json`
+- [x] Hero section with animated tagline word swap
+- [x] Work Experience timeline (from `src/content/experience.ts`)
+- [x] Projects card grid (from `src/content/projects.ts`)
+- [x] Skills grid (from `src/content/skills.ts`)
+- [x] Contact / Footer with PDF resume download link
 - [ ] Run `npm run resume:build` to generate `public/resume.pdf`
 
 ### Phase 3 — Case study pages
 
 - [ ] `/projects/[slug]` template page
-- [ ] Write up initial case studies (start with CircleBlack work and consultant projects)
+- [ ] Write up initial case studies (start with CircleBlack and consultant projects)
 - [ ] Dynamic OG images per project (Satori)
 
 ### Phase 4 — Polish & deploy
@@ -248,6 +251,19 @@ stakeholders. Currently preparing for the AWS Developer Associate certification.
 - [ ] Lighthouse: target 95+ Performance, 100 Accessibility
 - [ ] `robots.txt`, `sitemap.xml`, meta/OG tags
 - [ ] Deploy to Cloudflare Pages on `mitchellsam.com`
+
+### Phase 5 — Design System Migration ✅
+
+Migrated from the initial emerald/Geist aesthetic to the current dark angular design language.
+CSS custom properties defined in `globals.css`; UI primitives in `src/components/ui/`.
+
+Completed work:
+- [x] Design tokens inlined in `src/app/globals.css` (color, spacing, motion, typography)
+- [x] Tailwind config updated to match token values
+- [x] Fonts switched to Archivo + Hanken Grotesk via `next/font/google`
+- [x] `Button`, `Badge`, `Card`, `CornerFrame` ported to TSX in `src/components/ui/`
+- [x] All sections restyled: Nav, Hero, SectionHeader, Experience, Projects, Skills, Footer
+- [x] `geist` package removed; `npm run build` passes clean
 
 ---
 

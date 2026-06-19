@@ -2,22 +2,176 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =====================================================
+   Color Tokens
+   ===================================================== */
+:root {
+  /* Substrate / neutrals */
+  --slate-1000: #05070b;
+  --slate-900:  #0a0e15;
+  --slate-800:  #11161f;
+  --slate-700:  #1a212d;
+  --slate-600:  #28313f;
+  --slate-500:  #3b4654;
+  --slate-400:  #5b6675;
+  --slate-300:  #8b95a3;
+  --slate-200:  #c2c9d2;
+  --slate-100:  #e8ecf1;
+  --white:      #ffffff;
+
+  /* Tower gold */
+  --gold-bright: #f0c850;
+  --gold:        #c9a23a;
+  --gold-deep:   #8a6f25;
+
+  /* Engram cyan */
+  --cyan-bright: #5fd0e6;
+  --cyan:        #38a9c4;
+  --cyan-deep:   #1d6b82;
+
+  /* Faction crimson */
+  --crimson-bright: #e2483b;
+  --crimson:        #c1352b;
+  --crimson-deep:   #7d1f19;
+
+  /* Status */
+  --success: #4f8a3d;
+  --warning: #e8a13b;
+  --danger:  #c1352b;
+  --info:    #38a9c4;
+
+  /* Semantic aliases */
+  --bg-base:         var(--slate-900);
+  --bg-deep:         var(--slate-1000);
+  --surface-raised:  var(--slate-800);
+  --surface-card:    var(--slate-700);
+  --surface-panel:   var(--slate-600);
+  --surface-input:   color-mix(in srgb, var(--slate-1000) 55%, transparent);
+  --surface-overlay: var(--slate-800);
+  --overlay-scrim:   rgba(5, 7, 11, 0.72);
+
+  --text-primary:     var(--slate-100);
+  --text-body:        var(--slate-200);
+  --text-muted:       var(--slate-300);
+  --text-faint:       var(--slate-400);
+  --text-invert:      var(--slate-1000);
+  --text-placeholder: var(--slate-400);
+  --text-link:        var(--cyan-bright);
+  --text-on-accent:   var(--slate-1000);
+
+  --accent:        var(--gold);
+  --accent-bright: var(--gold-bright);
+  --accent-press:  var(--gold-deep);
+  --accent-text:   var(--gold-bright);
+
+  --border-hairline: var(--slate-500);
+  --border-strong:   var(--slate-400);
+  --border-input:    var(--slate-500);
+  --border-focus:    var(--cyan-bright);
+
+  --glow-focus: 0 0 0 1px var(--cyan-bright), 0 0 16px -2px rgba(95, 208, 230, 0.65);
+  --glow-gold:  0 0 18px -3px rgba(240, 200, 80, 0.7);
+  --glow-soft:  0 0 24px -6px rgba(0, 0, 0, 0.8);
+}
+
+/* =====================================================
+   Spacing & Motion Tokens
+   ===================================================== */
+:root {
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  --radius-0:    0px;
+  --radius-sm:   2px;
+  --radius-pill: 999px;
+
+  --border-1:      1px;
+  --border-2:      2px;
+  --border-accent: 3px;
+
+  --shadow-plate: 0 2px 18px -6px rgba(0, 0, 0, 0.7);
+  --shadow-pop:   0 8px 40px -10px rgba(0, 0, 0, 0.85);
+
+  --scrim-bottom: linear-gradient(to top, rgba(5,7,11,0.92) 0%, rgba(5,7,11,0.55) 40%, transparent 100%);
+  --scrim-full:   linear-gradient(to top, rgba(5,7,11,0.85) 0%, rgba(5,7,11,0.35) 60%, rgba(5,7,11,0.15) 100%);
+  --wash-panel:   linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0) 60%);
+
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-sharp: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:   120ms;
+  --dur-base:   200ms;
+  --dur-slow:   360ms;
+}
+
+/* =====================================================
+   Typography Tokens
+   Fonts loaded via next/font (--archivo, --hanken vars
+   applied to <html>) and aliased here to CSS variable names.
+   ===================================================== */
+:root {
+  --font-display: var(--archivo, 'Archivo', system-ui, sans-serif);
+  --font-text:    var(--hanken, 'Hanken Grotesk', system-ui, sans-serif);
+  --font-numeric: var(--archivo, 'Archivo', system-ui, sans-serif);
+
+  --w-thin:    200;
+  --w-light:   300;
+  --w-regular: 400;
+  --w-medium:  500;
+  --w-semibold:600;
+  --w-bold:    700;
+
+  --track-mega:  0.22em;
+  --track-wide:  0.14em;
+  --track-label: 0.08em;
+  --track-tight: 0.01em;
+
+  --fs-display: 72px;
+  --fs-h1:      44px;
+  --fs-h2:      32px;
+  --fs-h3:      24px;
+  --fs-title:   19px;
+  --fs-body:    16px;
+  --fs-sm:      14px;
+  --fs-label:   12px;
+  --fs-micro:   10px;
+  --fs-numeral: 56px;
+
+  --lh-tight: 1.05;
+  --lh-snug:  1.2;
+  --lh-body:  1.55;
+  --lh-prose: 1.7;
+}
+
+/* =====================================================
+   Site globals
+   ===================================================== */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
 }
 
 body {
-  background-color: #0a0a0a;
-  color: #f0f0f0;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-text);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: rgba(110, 231, 183, 0.14);
-  color: #6ee7b7;
+  background: color-mix(in srgb, var(--gold) 22%, transparent);
+  color: var(--accent-text);
 }
 
 a {

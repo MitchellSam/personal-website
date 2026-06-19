@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "#work", label: "Work" },
+  { href: "#work",     label: "Work"     },
   { href: "#projects", label: "Projects" },
-  { href: "#skills", label: "Skills" },
+  { href: "#skills",   label: "Skills"   },
 ];
 
 export default function Nav() {
@@ -22,34 +22,95 @@ export default function Nav() {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 h-16 flex items-center border-b transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 h-16 flex items-center border-b transition-all",
         scrolled
-          ? "bg-bg/72 backdrop-blur-[16px] saturate-[160%] border-border"
+          ? "border-border backdrop-blur-[16px] saturate-[160%]"
           : "border-transparent"
       )}
+      style={{ transitionDuration: "var(--dur-base)", background: scrolled ? "color-mix(in srgb, var(--surface-raised) 80%, transparent)" : "transparent" }}
     >
       <div className="w-full max-w-content mx-auto px-8 flex items-center justify-between">
-        <a href="#top" className="font-mono font-semibold text-[15px] tracking-[-0.02em] flex items-center gap-2 text-text">
-          <span className="w-[7px] h-[7px] rounded-full bg-accent shadow-[0_0_10px_rgba(110,231,183,0.4)]" />
+        {/* Logo */}
+        <a
+          href="#top"
+          style={{
+            fontFamily:    "var(--font-display)",
+            fontWeight:    "var(--w-semibold)",
+            fontSize:      14,
+            letterSpacing: "var(--track-label)",
+            textTransform: "uppercase",
+            color:         "var(--text-primary)",
+            display:       "flex",
+            alignItems:    "center",
+            gap:           10,
+          }}
+        >
+          <span style={{
+            width:     7,
+            height:    7,
+            background: "var(--gold)",
+            boxShadow: "var(--glow-gold)",
+            flexShrink: 0,
+          }} />
           Mitchell Sam
         </a>
-        <div className="flex items-center gap-1.5">
+
+        {/* Nav links + resume */}
+        <div className="flex items-center gap-1">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm text-muted px-3 py-2 rounded-[7px] transition-colors hover:text-text hover:bg-surface hidden sm:block"
+              className="hidden sm:block px-3 py-2 transition-colors"
+              style={{
+                fontFamily:    "var(--font-display)",
+                fontSize:      12,
+                letterSpacing: "var(--track-label)",
+                textTransform: "uppercase",
+                color:         "var(--text-muted)",
+                borderRadius:  "var(--radius-0)",
+                transitionDuration: "var(--dur-fast)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "var(--text-primary)";
+                e.currentTarget.style.background = "color-mix(in srgb, var(--surface-card) 60%, transparent)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "var(--text-muted)";
+                e.currentTarget.style.background = "transparent";
+              }}
             >
               {l.label}
             </a>
           ))}
+
+          {/* Resume — DS secondary button style */}
           <a
             href="/resume.pdf"
             download
-            className="ml-2 flex items-center gap-1.5 font-mono text-[13px] font-medium text-accent px-[15px] py-2 border border-accent/30 rounded-lg transition-all hover:bg-accent-dim hover:border-accent hover:shadow-[0_0_24px_rgba(110,231,183,0.18)]"
+            className="ml-3 flex items-center gap-1.5"
+            style={{
+              fontFamily:    "var(--font-display)",
+              fontSize:      12,
+              fontWeight:    "var(--w-medium)",
+              letterSpacing: "var(--track-label)",
+              textTransform: "uppercase",
+              color:         "var(--text-primary)",
+              padding:       "8px 16px",
+              border:        "1px solid var(--border-hairline)",
+              borderRadius:  "var(--radius-0)",
+              transition:    "border-color var(--dur-fast) var(--ease-sharp), color var(--dur-fast) var(--ease-sharp)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = "var(--accent)";
+              e.currentTarget.style.color = "var(--accent-text)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = "var(--border-hairline)";
+              e.currentTarget.style.color = "var(--text-primary)";
+            }}
           >
-            Resume{" "}
-            <span className="transition-transform group-hover:translate-y-0.5">↓</span>
+            Resume ↓
           </a>
         </div>
       </div>
