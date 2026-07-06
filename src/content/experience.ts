@@ -10,12 +10,14 @@ export interface Role {
   featured?: boolean;
 }
 
+// Text mirrors resume/resume.tex verbatim — the resume is the canonical
+// wording. Update the resume first, then sync this file.
 export const experience: Role[] = [
   {
     company: "A.V. Services Inc.",
     companyShort: "A.V. Services / JPMC",
     badge: "Current",
-    title: "Fullstack Software Engineer II",
+    title: "Fullstack Software Engineer II (Contracted to JPMorgan Chase)",
     dates: "Dec 2025 — Present",
     location: "Jersey City, NJ",
     description:
@@ -47,15 +49,15 @@ export const experience: Role[] = [
     dates: "Jun 2023 — Dec 2025",
     location: "New York, NY",
     description:
-      "Independent consulting focused on infrastructure, legacy system upgrades, and intelligent data ingestion pipelines.",
+      "Offered consulting services focused on infrastructure, legacy system upgrades, and intelligent data ingestion pipelines.",
     bullets: [
       {
         label: "Windows on the Lake",
-        text: "Refactored and enhanced a legacy email parsing system that routes client inquiries to a CRM, integrating the GLiNER Named Entity Recognition model for intelligent NLP-based tagging and categorization.",
+        text: "Refactored and enhanced a legacy email parsing system that routes client inquiries to a CRM. Enhancements include using the GLiNER Named Entity Recognition model for natural language processing for intelligent tagging and categorization of data.",
       },
       {
         label: "HEVO",
-        text: "Conducted a post-migration technical audit of AWS infrastructure, legacy Java codebases, and CI/CD pipelines to restore platform functionality after a contractor transition.",
+        text: "Conducted a post-migration technical audit of AWS infrastructure, legacy Java codebases, and CI/CD pipelines to help restore platform functionality and re-establish internal development workflows after transitioning from a third-party contractor.",
       },
     ],
     featured: true,
@@ -67,11 +69,15 @@ export const experience: Role[] = [
     dates: "Mar 2020 — Jun 2023",
     location: "Jersey City, NJ",
     description:
-      "Agile FinTech company offering an all-in-one wealth management platform for portfolio management, performance reporting, and rebalancing.",
+      "Agile FinTech company that offers an all-in-one wealth management platform that assists relationship-focused advisors with portfolio management, performance reporting, and rebalancing.",
     bullets: [
       {
         label: "Front-End Modernization",
-        text: "Migrated multiple Angular front ends to React, preserving 100% functionality, reducing loading times by 50%, and creating a smoother user experience.",
+        text: "Made significant contributions to the migration of multiple Angular front ends to React, preserving 100% functionality, reducing loading times by 50%, and creating a smoother user experience.",
+      },
+      {
+        label: "Automated Testing",
+        text: "Developed and implemented comprehensive automated tests using Mocha, Chai, and Jasmine, achieving 100% code coverage, and improving deployment confidence.",
       },
       {
         label: "Queueing System",
@@ -79,15 +85,11 @@ export const experience: Role[] = [
       },
       {
         label: "Third-Party Integrations",
-        text: "Integrated third-party systems via RESTful APIs, expanding platform functionality and product offerings by 50%.",
-      },
-      {
-        label: "Automated Testing",
-        text: "Developed comprehensive automated tests using Mocha, Chai, and Jasmine, achieving 100% code coverage and improving deployment confidence.",
+        text: "Successfully integrated third-party systems using RESTful APIs enabling seamless data exchange, and expanding the platform's functionality and product offerings by 50%.",
       },
       {
         label: "Onboarding & Documentation",
-        text: "Reduced new-hire ramp-up time by 25% through technical environment setup and detailed onboarding documentation.",
+        text: "Played a pivotal role in onboarding new hires by setting up their technical environment and authoring detailed documentation, reducing ramp-up time by 25%.",
       },
     ],
     featured: true,
@@ -99,23 +101,23 @@ export const experience: Role[] = [
     dates: "Mar 2019 — Feb 2020",
     location: "New York, NY",
     description:
-      "Premiere waterfront wedding venue and events facility.",
+      "Worked for a Premiere Waterfront Wedding Venue, Catering Hall, and Events Facility to improve business operations and customer engagements.",
     bullets: [
       {
-        label: "Email Parser",
-        text: "Enhanced the automated email parser, improving data extraction accuracy by 33% and streamlining communication processes.",
+        label: "Email Parser Enhancement",
+        text: "Enhanced the automated email parser for the client, improving data extraction accuracy by 33% and streamlining communication processes.",
       },
       {
         label: "CRM Optimization",
-        text: "Optimized CRM data flow, resulting in a 20% increase in customer conversions.",
+        text: "Optimized the client's CRM data flow, increasing data integrity and organization of the company's event management software, resulting in a 20% increase in customer conversions.",
       },
       {
         label: "Backend Development",
-        text: "Developed new backend API features using Node.js and Express, expanding functionality by 25%.",
+        text: "Developed new features for backend APIs using Node.js and Express, supporting business operations and expanding functionality by 25%.",
       },
       {
         label: "Container Deployments",
-        text: "Managed Docker container deployments, achieving 99.9% uptime and improving scalability for client applications.",
+        text: "Managed container deployments with Docker, ensuring reliable and scalable application delivery, achieving 99.9% uptime and improving scalability for client applications.",
       },
     ],
     featured: true,
@@ -124,46 +126,47 @@ export const experience: Role[] = [
     company: "FDM Group",
     companyShort: "FDM / Fannie Mae",
     badge: "Early career",
-    title: "Business Analyst Consultant",
+    title: "Business Analyst Consultant at Fannie Mae",
     dates: "May 2016 — Jan 2018",
     location: "Washington, DC",
     description:
-      "Embedded consultant at Fannie Mae, a government-sponsored enterprise issuing mortgage-backed securities.",
+      "Fannie Mae is a government-sponsored enterprise that issues mortgage-backed securities to expand the secondary mortgage market and create opportunities to rent, buy, and refinance homes.",
     bullets: [
       {
-        label: "QA Automation",
-        text: "Wrote Python, Bash, and SQL tooling for data analysis and QA validation, reducing manual testing time by 50%.",
+        label: "Data Analytics & Visualization",
+        text: "Produced, analyzed, and visualized data for over 100 usage and performance metrics, providing valuable insights that informed stakeholder decisions.",
+      },
+      {
+        label: "Testing",
+        text: "Supported internal tools used by risk and compliance teams. Wrote Python scripts, UNIX bash scripts, and SQL queries for data analysis and QA validation, performing hundreds of tests for research and data quality, reducing manual testing time by 50% and ensuring accurate and timely releases.",
       },
       {
         label: "Automation",
-        text: "Automated production-related tasks, saving approximately 100 man-hours per month.",
+        text: "Automated production-related tasks, saving the company approximately 100 man-hours per month and improving operational efficiency.",
       },
       {
-        label: "Data Analytics",
-        text: "Produced, analyzed, and visualized 100+ usage and performance metrics to inform stakeholder decisions.",
-      },
-      {
-        label: "Loan Performance",
-        text: "Delivered application enhancements that reduced report generation time by 50%.",
+        label: "Loan Performance Improvements",
+        text: "Delivered enhancements to the Loan Performance application, improving data quality and reducing report generation time by 50% while adding new features to improve user experience.",
       },
     ],
     featured: true,
   },
   {
-    company: "Amelotte International",
+    company: "Amelotte International Corporation",
     badge: "Early career",
     title: "IT Support",
     dates: "Nov 2014 — Jul 2015",
     location: "New York, NY",
-    description: "Textiles and clothing manufacturing group with global operations.",
+    description:
+      "Textiles and clothing manufacturing group with factories in Asia and regional offices in the United States.",
     bullets: [
       {
         label: "Database Development",
-        text: "Built a database solution for financial tracking, reducing invoice processing time by 25%.",
+        text: "Developed and implemented a database solution for tracking financial data, reducing invoice processing time by 25% and minimizing errors.",
       },
       {
         label: "Mentorship",
-        text: "Led training sessions on database schema design and data best practices.",
+        text: "Led training sessions on database schema design and data best practices, improving the technical proficiency of the management team and coworkers.",
       },
     ],
   },
@@ -174,19 +177,19 @@ export const experience: Role[] = [
     dates: "Jun 2013 — Apr 2014",
     location: "New York, NY",
     description:
-      "Non-profit offering career and mentorship programs for Pan-Asian professionals.",
+      "Non-profit offering career lifecycle and cross-industry networking and mentorship opportunities, development, and leadership programs for Pan-Asian professionals.",
     bullets: [
       {
-        label: "Web & Database",
-        text: "Managed website and membership database, contributing to a 50% increase in event registrations.",
+        label: "Website & Membership Database Management",
+        text: "Managed and updated the organization's website and membership database, contributing to a 50% increase in event registrations through improved visibility.",
       },
       {
         label: "Data Analysis",
-        text: "Analyzed metrics for 50+ volunteer branches and 5,000+ registered members.",
+        text: "Analyzed metrics for over 50 volunteer branches and over 5,000 registered members, providing insights that drove marketing decisions and strategic initiatives.",
       },
       {
         label: "Acquisition Project",
-        text: "Supported an organizational acquisition by merging 60,000+ contact records while ensuring data integrity.",
+        text: "Played a key role during the acquisition of another organization by successfully implementing a website redesign and merging the distribution lists of over 60,000 contacts, ensuring data integrity and a smooth transition.",
       },
     ],
   },
