@@ -179,6 +179,38 @@ a {
   text-decoration: none;
 }
 
+:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* =====================================================
+   Shared interactive patterns
+   Hover/focus live here (not in JS) so components that
+   use them can stay server components.
+   ===================================================== */
+.card-link {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 8px 12px;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-0);
+  transition: color var(--dur-fast) var(--ease-sharp), border-color var(--dur-fast) var(--ease-sharp);
+}
+
+.card-link:hover {
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;

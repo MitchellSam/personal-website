@@ -1,6 +1,7 @@
 import { projects } from "@/content/projects";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
+import { GitHubIcon } from "@/components/ui/icons";
 import SectionHeader from "./SectionHeader";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
@@ -130,32 +131,9 @@ export default function Projects() {
                         href={p.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{
-                          flex:          1,
-                          display:       "inline-flex",
-                          alignItems:    "center",
-                          justifyContent:"center",
-                          gap:           6,
-                          fontFamily:    "var(--font-display)",
-                          fontSize:      "var(--fs-label)",
-                          letterSpacing: "var(--track-label)",
-                          textTransform: "uppercase",
-                          color:         "var(--text-muted)",
-                          padding:       "8px 12px",
-                          border:        "1px solid var(--border-hairline)",
-                          borderRadius:  "var(--radius-0)",
-                          transition:    "color var(--dur-fast) var(--ease-sharp), border-color var(--dur-fast) var(--ease-sharp)",
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.color = "var(--text-primary)";
-                          e.currentTarget.style.borderColor = "var(--border-strong)";
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.color = "var(--text-muted)";
-                          e.currentTarget.style.borderColor = "var(--border-hairline)";
-                        }}
+                        className="card-link"
                       >
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                           <polyline points="15 3 21 3 21 9" />
                           <line x1="10" y1="14" x2="21" y2="3" />
@@ -168,34 +146,9 @@ export default function Projects() {
                         href={p.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{
-                          flex:          1,
-                          display:       "inline-flex",
-                          alignItems:    "center",
-                          justifyContent:"center",
-                          gap:           6,
-                          fontFamily:    "var(--font-display)",
-                          fontSize:      "var(--fs-label)",
-                          letterSpacing: "var(--track-label)",
-                          textTransform: "uppercase",
-                          color:         "var(--text-muted)",
-                          padding:       "8px 12px",
-                          border:        "1px solid var(--border-hairline)",
-                          borderRadius:  "var(--radius-0)",
-                          transition:    "color var(--dur-fast) var(--ease-sharp), border-color var(--dur-fast) var(--ease-sharp)",
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.color = "var(--text-primary)";
-                          e.currentTarget.style.borderColor = "var(--border-strong)";
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.color = "var(--text-muted)";
-                          e.currentTarget.style.borderColor = "var(--border-hairline)";
-                        }}
+                        className="card-link"
                       >
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-1.7c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z" />
-                        </svg>
+                        <GitHubIcon width={12} height={12} />
                         GitHub
                       </a>
                     )}

@@ -96,7 +96,7 @@ src/
 ├── components/
 │   ├── nav/Nav.tsx
 │   ├── sections/           # Hero, Experience, Projects, Skills, Footer
-│   └── ui/                 # Button, Badge, Card, CornerFrame (DS ports)
+│   └── ui/                 # Button, Badge, Card, CornerFrame (DS ports) + shared icons
 └── content/
     ├── experience.ts       # Work history data
     ├── projects.ts         # Projects data
@@ -118,7 +118,7 @@ Key visual decisions, all expressed as CSS custom properties in `globals.css`:
 - **Typography**: Archivo (uppercase, tracked headings) + Hanken Grotesk (body)
 - **Motion**: 120–200ms, `ease-sharp` — snappy, mechanical feel
 
-The four UI primitives (`Button`, `Badge`, `Card`, `CornerFrame`) live in `src/components/ui/` and compose using these tokens via inline styles.
+The four UI primitives (`Button`, `Badge`, `Card`, `CornerFrame`) live in `src/components/ui/` and compose using these tokens via inline styles. Shared hover/focus patterns (e.g. `.card-link`) are defined as classes in `globals.css` so components that use them can stay server components.
 
 ---
 
